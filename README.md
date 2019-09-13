@@ -1,2 +1,2 @@
 # MatLAB-Projects
-In this repository are all of my MATLAB projects done outside of class.
+In this repository are all of my MATLAB projects completed outside of class.
