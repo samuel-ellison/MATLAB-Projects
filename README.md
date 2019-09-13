@@ -1,4 +1,2 @@
 # MatLAB-Projects
-gg
-g
-g
+In this repository are all of my MATLAB projects done outside of class.
