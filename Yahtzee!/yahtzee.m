@@ -1,41 +1,7 @@
 clc; clear all; close all; rng('shuffle');
 
 %% CHOOSE STYLE
-% figure(7)
-% text(0,3,'Choose a Style 1-6','FontSize', 36, 'FontWeight', 'bold')
-% set(gcf, 'Position',  [400, 600, 700, 100])
-% axis([-1 20 -1 5])
-% set(gca,'visible','off')
-% set(gcf, 'MenuBar', 'none');
-% 
-% pause(3)
-% close all
-% 
-% color = {[0.6350 0.0780 0.1840] [0 0.4470 0.7410] [0.4660 0.6740 0.1880] [0.9290 0.6940 0.1250] [0.4940 0.1840 0.5560] [0.8500 0.3250 0.0980]};
-% left = [0 500 1000 0 500 1000];
-% bottom = [425 425 425 25 25 25];
-x = [3, 4.5, 6, 7.5, 9];
-y = [6, 6, 6, 6, 6];
-% for k = 1:1:6
-%     figure(k)
-%     rectangle('Position', [2.5 0 8 5.5], 'FaceColor', 'w', 'LineWidth', 3)
-%     rectangle('Position', [2.5 5.5 8 2], 'FaceColor', color{k}, 'LineWidth', 3)
-%     for j = 1:1:5
-%         rectangle('Position', [x(j) y(j) 1 1], 'FaceColor', 'w', 'LineWidth', 3)
-%     end
-%     t = sprintf('%i',k);
-%     text(6,2.75,t,'FontSize', 48, 'FontWeight', 'bold')
-%     set(gcf, 'Position',  [left(k), bottom(k), 500, 400])
-%     set(gca,'visible','off')
-%     set(gcf, 'MenuBar', 'none');
-%     axis([2.5 10.5 0 7.5])
-%     axis equal
-%     hold on
-% end
-%     
 fprintf('Choose a Color Style\n');
-% col = color{style};
-% close all
 color = uisetcolor;
 clc;
 
@@ -50,10 +16,9 @@ audiowrite(filename,data,fs);
 clear data fs
 [data,fs] = audioread('roll.wav');
 
-%% SCOREBOARD
-
-
 %% POSITIONS
+x = [3, 4.5, 6, 7.5, 9];
+y = [6, 6, 6, 6, 6];
 x_out = x - 0.06;
 y_out = y - 0.06;
 
@@ -114,7 +79,7 @@ rectangle('Position', [8.75 1.05 1.5 0.4], 'FaceColor', 'w', 'LineWidth', 2)
 
 hold on
 
-
+%% PLAY GAME
 taken = zeros(1, 13);
 cardpoints = zeros(1, 13);
 turns = 0;
@@ -259,6 +224,7 @@ while turns < 13
 
 end
 
+%% GRAND TOTAL
 grand_total = tot_up + tot_low;
 t = sprintf('%i', grand_total);
 text(8.85,1.25,t,'FontSize', 18, 'FontWeight', 'bold')
